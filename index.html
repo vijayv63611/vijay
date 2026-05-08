@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Iyengar Bakery Cake Studio</title>
+
+<style>
+
+/* SMOOTH SCROLL */
+
+html{
+scroll-behavior:smooth;
+}
+
+/* GLOBAL */
+
+body{
+margin:0;
+font-family:Arial;
+background:#fff6f2;
+}
+
+/* HEADER */
+
+header{
+background:#3b1414;
+color:white;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:10;
+box-shadow:0 3px 10px black;
+height: 50px;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#ffb347;
+}
+
+/* NAVBAR */
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 12px;
+font-weight:bold;
+position:relative;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:#ffb347;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* HEADER BUTTONS */
+
+.auth button{
+padding:8px 18px;
+margin-left:10px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+}
+
+.login{
+background:white;
+color:#3b1414;
+}
+
+.signup{
+background:brown;
+color:white;
+}
+
+.login:hover{
+background:brown;
+color:white;
+}
+
+.signup:hover{
+background:white;
+color:#3b1414;
+}
+
+/* SLIDER */
+
+.slider{
+height:90vh;
+overflow:hidden;
+position:relative;
+}
+
+.slides{
+display:flex;
+width:400%;
+animation:slide 12s infinite;
+}
+
+.slides img{
+width:100%;
+height:90vh;
+object-fit:cover;
+}
+
+/* HERO TEXT */
+
+.hero-text{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:white;
+font-size:50px;
+font-weight:bold;
+text-shadow:0 0 20px black;
+text-align:center;
+}
+
+.hero-text p{
+font-size:20px;
+}
+
+/* SLIDER ANIMATION */
+
+@keyframes slide{
+0%{margin-left:0;}
+33%{margin-left:-100%;}
+66%{margin-left:-200%;}
+100%{margin-left:0;}
+}
+
+/* SECTIONS */
+
+section{
+padding:70px;
+text-align:center;
+}
+
+section h2{
+color:#4b1d1d;
+margin-bottom:20px;
+}
+
+/* CAKE CARDS */
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+}
+
+.card{
+width:230px;
+background:white;
+border-radius:10px;
+box-shadow:0 0 10px grey;
+overflow:hidden;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 10px 20px black;
+}
+
+.card img{
+width:100%;
+height:160px;
+object-fit:cover;
+}
+
+.card h3{
+color:#4b1d1d;
+}
+
+/* MOVING CAKES */
+
+.moving-row{
+display:flex;
+gap:30px;
+margin-top:40px;
+animation:move 15s linear infinite;
+}
+
+.moving-row img{
+width:200px;
+height:150px;
+border-radius:10px;
+}
+
+@keyframes move{
+0%{transform:translateX(100%);}
+100%{transform:translateX(-100%);}
+}
+
+/* SERVICES */
+
+#services{
+background:#fff0ea;
+}
+
+.service-cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+margin-top:30px;
+}
+
+.service{
+width:230px;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 10px grey;
+transition:0.4s;
+}
+
+.service:hover{
+transform:translateY(-10px) scale(1.05);
+background:pink;
+box-shadow:0 10px 20px black;
+}
+
+/* ROTATE CARDS */
+
+.rotate{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.rotate-card{
+width:220px;
+background:white;
+border-radius:12px;
+box-shadow:0 0 10px grey;
+overflow:hidden;
+text-align:center;
+animation:rotateCard 6s linear infinite;
+transition:0.4s;
+}
+
+.rotate-card img{
+width:200px;
+height:200px;
+object-fit:cover;
+}
+
+.rotate-card h3{
+color:#4b1d1d;
+padding:10px;
+}
+
+.rotate-card:hover{
+animation-play-state:paused;
+transform:scale(1.1);
+}
+
+@keyframes rotateCard{
+0%{transform:rotateY(0deg);}
+100%{transform:rotateY(360deg);}
+}
+
+/* REVIEWS */
+
+.reviews{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+
+}
+.review-card{
+    background: pink;
+    border-radius: 10px;
+    box-shadow:0 0 10px grey;
+    width:280px;
+    height:280px;
+    border-radius:10px;
+overflow:hidden;
+transition:0.4s;
+margin:20px;
+}
+.review-img{
+width:80px;
+height:80px;
+border-radius:50%;
+object-fit:cover;
+margin-top:15px;
+border:3px solid #ffb347;
+display: flex;
+padding-top: 10px;
+
+}
+.review-card img{
+width:70px;
+height:70px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:10px;
+border:3px solid #ffb347;
+background: pink;
+
+}
+
+.review-card h4{
+margin:10px ;
+color:#4b1d1d;
+font-size:18px;
+
+}
+
+.review-card span{
+font-size:13px;
+color:black;
+}
+.review-card:hover{
+transform:translateY(-10px) scale(1.05);
+
+box-shadow:0 10px 20px brown;
+}
+
+/* LOGIN SIGNUP */
+
+.auth-section{
+background:#fff0ea;
+}
+
+.form-container{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.form-box{
+background:white;
+padding:30px;
+width:280px;
+border-radius:10px;
+box-shadow:0 0 10px grey;
+}
+
+.form-box input{
+width:90%;
+padding:10px;
+margin:8px 0;
+border-radius:5px;
+border:1px solid grey;
+}
+
+.form-box button{
+margin-top:10px;
+padding:10px 20px;
+border:none;
+background:#3b1414;
+color:white;
+border-radius:20px;
+cursor:pointer;
+}
+.form-box:hover{
+transform:translateY(-10px) scale(1.05);
+
+box-shadow:0 10px 20px brown;
+}
+/* COMPANY SECTIONS */
+
+.company{
+background:pink;
+padding:70px;
+text-align:center;
+}
+
+.company p{
+max-width:900px;
+margin:auto;
+line-height:1.8;
+font-size:17px;
+color:#444;
+}
+
+.company-box{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+margin-top:40px;
+}
+
+.company-card{
+width:260px;
+background:#fff6f2;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 10px grey;
+transition:0.4s;
+}
+
+.company-card:hover{
+transform:translateY(-10px);
+background:#ffe0d6;
+}
+/* CONTACT */
+
+.contact{
+background:#ffe5d9;
+}
+
+.socialmedia{
+text-decoration:none;
+margin:8px;
+padding:10px 16px;
+background:red;
+color:white;
+border-radius:20px;
+display:inline-block;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#3b1414;
+color:white;
+padding:40px 20px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+gap:40px;
+}
+
+
+
+.footer-box h3{
+color:#ffb347;
+margin-bottom:10px;
+}
+
+.footer-box a{
+display:block;
+text-decoration:none;
+color:white;
+margin:5px 0;
+}
+
+
+.social{
+
+color:white !important;
+padding:6px 12px;
+border-radius:15px;
+display:inline-block;
+margin:5px;
+}
+
+.copyright{
+text-align:center;
+margin-top:20px;
+color:#ddd;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Iyengar Bakery</div>
+
+<nav>
+<a href="#home">🏠Home</a>
+<a href="#cake">🍰Cake</a>
+<a href="#design">🎂Design</a>
+<a href="#services">🚚Services</a>
+<a href="#reviews">⭐Reviews</a>
+<a href="#contact">📞Contact</a>
+</nav>
+
+<div class="auth">
+<a href="#auth"><button class="login">🔐 Login</button></a>
+<a href="#auth"><button class="signup">📝 Sign Up</button></a>
+</div>
+
+</header>
+
+<!-- SLIDER -->
+
+<div class="slider" id="home">
+
+<div class="slides">
+
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+<img src="images/c2.jpg">
+<img src="images/c3.jpg">
+
+</div>
+
+<div class="hero-text">
+Iyengar Bakery Cake Studio
+<p>•Fresh Cakes • Custom Designs • Sweet Celebrations</p>
+</div>
+
+</div>
+
+<!-- CAKES -->
+
+<section id="cakes">
+
+<h2>Popular Cakes</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+<h3>Chocolate Cake</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1559622214-f8a9850965bb">
+<h3>Black Forest</h3>
+</div>
+
+<div class="card">
+<img src="images/sc.jpg">
+<h3>Strawberry Cake</h3>
+</div>
+
+<div class="card">
+<img src="images/rs.jpg">
+<h3>Red Velvet</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- TRENDING -->
+
+<section id="designs">
+
+<h2>Trending Cakes</h2>
+
+<div class="moving-row">
+
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+<img src="images/sc.jpg">
+<img src="images/rs.jpg">
+<img src="images/sc.jpg">
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Special Cake Designs</h2>
+
+<div class="rotate">
+
+<div class="rotate-card">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+<h3>Chocolate</h3>
+</div>
+
+<div class="rotate-card">
+<img src="images/sc.jpg">
+<h3>Strawberry</h3>
+</div>
+
+<div class="rotate-card">
+<img src="images/dc.webp">
+<h3>Wedding</h3>
+</div>
+
+<div class="rotate-card">
+<img src="images/bf.jpg">
+<h3>Designer</h3>
+</div>
+
+</div>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2>Our Services</h2>
+
+<div class="service-cards">
+
+<div class="service">
+<h3>🎂 Custom Cake</h3>
+<p>Beautiful cakes for birthdays and weddings.</p>
+</div>
+
+<div class="service">
+<h3>🚚 Delivery</h3>
+<p>Fast and safe cake delivery.</p>
+</div>
+
+<div class="service">
+<h3>🎉 Event Cakes</h3>
+<p>Cakes for celebrations and events.</p>
+</div>
+
+<div class="service">
+<h3>🍰 Fresh Cakes</h3>
+<p>Daily fresh cakes baked with love.</p>
+</div>
+
+</div>
+
+</section>
+<!-- ABOUT COMPANY -->
+
+<section class="company">
+
+<h2>About Iyengar Bakery</h2>
+
+<p>
+Iyengar Bakery Cake Studio is a traditional bakery known for its fresh,
+delicious and beautifully designed cakes. Our bakery has been serving
+customers with love and passion for many years. Every cake is prepared
+with high quality ingredients, rich flavors, and artistic designs.
+We believe every celebration deserves a perfect cake that brings joy
+and sweetness to every moment.
+</p>
+
+</section>
+
+
+<!-- OUR STORY -->
+
+<section class="company">
+
+<h2>Our Story</h2>
+
+<p>
+Iyengar Bakery started with a simple dream of creating the best
+handmade cakes for families and celebrations. From a small bakery
+kitchen to a well-loved cake studio, our journey has been filled
+with creativity, dedication and happy customers. We focus on
+traditional baking techniques combined with modern cake designs
+to give customers both taste and beauty in every slice.
+</p>
+
+</section>
+
+
+<!-- COMPANY VALUES -->
+
+<section class="company">
+
+<h2>Our Mission</h2>
+
+<div class="company-box">
+
+<div class="company-card">
+<h3>🎂 Quality</h3>
+<p>We use premium ingredients to bake soft, fresh and flavorful cakes every day.</p>
+</div>
+
+<div class="company-card">
+<h3>❤️ Passion</h3>
+<p>Our bakers create every cake with creativity, love and attention to detail.</p>
+</div>
+
+<div class="company-card">
+<h3>😊 Customer Happiness</h3>
+<p>Our goal is to make every celebration special with beautiful cakes.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY CHOOSE US -->
+
+<section class="company">
+
+<h2>Why Choose Iyengar Bakery</h2>
+
+<p>
+Customers choose Iyengar Bakery because of our commitment to quality,
+taste and creative cake designs. Whether it is a birthday, wedding,
+anniversary or special event, we create customized cakes that match
+your theme and style. Our fast delivery service, friendly staff,
+and delicious recipes make us one of the most loved bakeries for
+cake lovers.
+</p>
+
+</section>
+
+<!-- ROTATE -->
+
+
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section id="reviews">
+
+<h2>Customer Reviews</h2>
+
+<div class="reviews">
+
+<div class="review-card">
+
+<img src="https://randomuser.me/api/portraits/women/65.jpg">
+
+<h4>Priya Sharma</h4>
+
+<span>Birthday Cake Order</span>
+
+<h3>★★★★★</h3>
+
+<p>The chocolate cake was very delicious and fresh.</p>
+
+</div>
+
+
+<div class="review-card">
+
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+<h4>Rahul Kumar</h4>
+
+<span>Wedding Cake</span>
+
+<h3>★★★★★</h3>
+
+<p>Beautiful cake design and perfect taste.</p>
+
+</div>
+
+
+<div class="review-card">
+
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+<h4>Anjali Verma</h4>
+
+<span>Anniversary Cake</span>
+
+<h3>★★★★★</h3>
+
+<p>Very soft and fresh cake</p>
+
+</div>
+
+</section>
+
+
+
+<!-- LOGIN SIGNUP -->
+
+<section id="auth" class="auth-section">
+
+<h2>Login / Sign Up</h2>
+
+<div class="form-container">
+
+<div class="form-box">
+
+<h3>Login</h3>
+
+<input type="text" placeholder="Username">
+<input type="password" placeholder="Password">
+<button>Login</button>
+
+</div>
+
+<div class="form-box">
+
+<h3>Sign Up</h3>
+
+<input type="text" placeholder="Full Name">
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+<button>Create Account</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2>Contact Us<br><br>Iyengar Bakery</h2>
+
+<p>
+📍 Shimoga, Karnataka<br>
+📞 +91 9876543210<br>
+📧 iyengarbakery@gmail.com
+</p>
+
+
+
+</section>
+
+<<footer>
+
+<div class="footer-container">
+
+<!-- COMPANY FIRST -->
+
+<div class="footer-box">
+
+<h3>Company Details</h3>
+
+<p>📍 Shimoga, Karnataka</p>
+<p>📞 +91 9876543210</p>
+<p>📧 iyengarbakery@gmail.com</p>
+
+</div>
+
+
+
+<div class="footer-box">
+
+<h3>Quick Links</h3>
+
+<a href="#home">Home</a>
+<a href="#cakes">Cakes</a>
+<a href="#designs">Designs</a>
+<a href="#services">Services</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+
+
+
+<div class="footer-box">
+
+<h3>Follow Us</h3>
+
+<a href="#" class="social">Facebook</a>
+<a href="#" class="social">Instagram</a>
+<a href="#" class="social">YouTube</a>
+<a href="#" class="social">Website</a>
+
+</div>
+
+</div>
+
+<p class="copyright">
+© 2026 Iyengar Bakery Cake Studio | All Rights Reserved
+</p>
+
+</footer>
